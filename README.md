@@ -50,4 +50,4 @@ zakwan/
 
 ---
 
-## 👨‍💻 Made with 💙 by Zakwan ([@farruroaster](https://github.com/farruroaster))
+## 👨‍💻 Made by Zakwan ([@farruroaster](https://github.com/farruroaster))
