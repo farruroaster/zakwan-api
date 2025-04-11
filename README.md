@@ -3,7 +3,7 @@
 This is a full-stack product management app built using **Node.js**, **Express**, and a **vanilla frontend UI**, where all product data is stored in a simple `products.json` file.
 
 Live Demo:
-- 🟢 Frontend (Netlify): [YOUR_NETLIFY_LINK_HERE](#)
+- 🟢 Frontend (Netlify): https://zakwanproject.netlify.app/
 - 🔵 Backend (Render): [https://zakwan-api.onrender.com](https://zakwan-api.onrender.com)
 
 ---
