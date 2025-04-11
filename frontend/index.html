@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zakwan Product Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .product {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .product span {
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    #loading {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.2rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📦 Zakwan Product List</h1>
+  </header>
+
+  <div id="loading">Loading products...</div>
+  <div class="products" id="products" style="display:none;"></div>
+
+  <script>
+    async function loadProducts() {
+      try {
+        const res = await fetch('http://localhost:3000/products');
+        const data = await res.json();
+
+        const container = document.getElementById('products');
+        const loader = document.getElementById('loading');
+
+        loader.style.display = 'none';
+        container.style.display = 'grid';
+        container.innerHTML = '';
+
+        data.forEach(p => {
+          const el = document.createElement('div');
+          el.className = 'product';
+          el.innerHTML = `
+            <h2>${p.name}</h2>
+            <p>Price: <span>$${p.price}</span></p>
+          `;
+          container.appendChild(el);
+        });
+
+      } catch (error) {
+        document.getElementById('loading').innerText = 'Failed to load products 😢';
+      }
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>
