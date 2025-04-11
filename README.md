@@ -32,3 +32,22 @@ Live Demo:
 ---
 
 ## 📁 Folder Structure
+zakwan/
+├── products.json         # Stores product data
+├── index.js              # Node.js Express API
+├── frontend/             # Static UI (HTML + JS)
+│   └── index.html
+└── README.md
+---
+
+## 🚀 Tech Stack
+
+- Node.js
+- Express.js
+- HTML + CSS + JS (Vanilla)
+- Netlify (frontend hosting)
+- Render (backend hosting)
+
+---
+
+## 👨‍💻 Made with 💙 by Zakwan ([@farruroaster](https://github.com/farruroaster))
