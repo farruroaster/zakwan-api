@@ -31,7 +31,23 @@ Live Demo:
 
 ---
 
+# 👉 How to Run the Project
+
+git clone https://github.com/farruroaster/zakwan-api.git
+cd zakwan-api-main
+npm install
+node index.js
+
+# 🖥️ Server runs at: http://localhost:3000
+
+---
+
 ## 📁 Folder Structure
+{
+  "name": "Bluetooth Speaker",
+  "price": 120
+}
+
 zakwan/
 ├── products.json         # Stores product data
 ├── index.js              # Node.js Express API
